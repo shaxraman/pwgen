@@ -8,7 +8,7 @@
 
 ## Install
 
-1. Move `pwgen.py` to `/usr/local/bin/`
+1. Copy `pwgen.py` to `/usr/local/bin/`
 
 ```bash
 sudo cp pwgen.py /usr/local/bin/pwgen
@@ -26,12 +26,12 @@ VF6wNRT55FC6
 ```
 
 ```bash
-$ pwgen 32
+$ pwgen -l 32
 tsaO0NJArNJuVseyBukMXgl4jJMLs7SH
 ```
 
 ```bash
-$ pwgen 32 hard
+$ pwgen -l 32 --hard
 S2Kp-n:Qd}zP&^6@xQNeI\"ufB?|g:34
 ```
 

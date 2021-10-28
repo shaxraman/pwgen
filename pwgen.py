@@ -3,7 +3,7 @@
 import sys
 import string
 from random import choice
-
+import argparse
 
 if sys.version_info < (3, 6, 0):
     sys.stderr.write("You need python 3.6 or later to run this script\n")
@@ -24,6 +24,10 @@ class Password:
         """ Set new include_symbols - !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ """
         self.include_symbols = string.punctuation
 
+    def remove_special_symbols(self):
+        """ Remove special symbols - !?@#$%^&*()-+=~_ """
+        self.include_symbols = ""
+
     def set_new_password_length(self, digital: int):
         """ Set new password length """
         self.password_length = digital
@@ -42,11 +46,21 @@ class Password:
 
 
 my_password = Password()
+parser = argparse.ArgumentParser()
 
-for i in sys.argv[1:]:
-    if not i.startswith("-") and i.isdigit():
-        my_password.set_new_password_length(int(i))
-    if not i.startswith("-") and not i.isdigit():
-        my_password.add_punctuation_symbols()
+parser.add_argument("-l", "--lenght", help="password lenght", type=int)
+parser.add_argument(
+    "--weak", "--easy", help="use only characters and numbers", action="store_true")
+parser.add_argument(
+    "--strong", "--hard", help="use all punctuation symbols", action="store_true")
+
+args = parser.parse_args()
+
+if args.lenght:
+    my_password.set_new_password_length(int(args.lenght))
+if args.weak:
+    my_password.remove_special_symbols()
+if args.strong:
+    my_password.add_punctuation_symbols()
 
 print(my_password.password())
