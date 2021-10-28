@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - run: ls -la; docker --version
+
     - name: Analysing the code with flake8
       run: |
-        docker run -it -v $(pwd):/code mvantellingen/python-lint:latest flake8 --max-line-length=128
+        docker run --rm  -v $(pwd):/code mvantellingen/python-lint:latest flake8 --max-line-length=50
