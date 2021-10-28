@@ -9,7 +9,7 @@
 1. Move `pwgen.py` to `/usr/local/bin/`
 
 ```bash
-sudo mv pwgen.py /usr/local/bin/pwgen
+sudo cp pwgen.py /usr/local/bin/pwgen
 ```
 
 ```bash
