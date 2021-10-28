@@ -1,4 +1,4 @@
-# PASSWD
+# PWGEN
 
 ## Requirements
 
