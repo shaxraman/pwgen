@@ -3,14 +3,12 @@ name: flake8 test
 on: [push]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Analysing the code with flake8
       run: |
-        docker run --rm  -v $(pwd):/code mvantellingen/python-lint:latest flake8 --max-line-length=128
+        docker run --rm -v $(pwd):/code mvantellingen/python-lint:latest flake8 --max-line-length=128
