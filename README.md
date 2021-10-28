@@ -1,5 +1,7 @@
 # PWGEN
 
+[![flake8 test](https://github.com/shaxraman/pwgen/actions/workflows/flake8.yaml/badge.svg)](https://github.com/shaxraman/pwgen/actions/workflows/flake8.yaml)
+
 ## Requirements
 
 - python 3.6 or later
