@@ -22,7 +22,7 @@ sudo chmod +x /usr/local/bin/pwgen
 
 ```bash
 $ pwgen
-VF6wNRT55FC6
+4@T=nkv5wbLZR8Sz
 ```
 
 ```bash
@@ -35,15 +35,14 @@ $ pwgen -l 32 --hard
 S2Kp-n:Qd}zP&^6@xQNeI\"ufB?|g:34
 ```
 
+```bash
+$ pwgen --exclude-symbols "123[]'/?.~"
+8(f=kozh94)@N$WN
+```
+
 ## TODO
 
 Add arguments and options:
 
-- Password Length: 16
-- Include Symbols:( e.g. @#$% )
-- Include Numbers:( e.g. 123456 )
-- Include Lowercase Characters:( e.g. abcdefgh )
-- Include Uppercase Characters:( e.g. ABCDEFGH )
-- Exclude Similar Characters:( e.g. i, l, 1, L, o, 0, O )
-- Exclude Ambiguous Characters:( { } [ ] ( ) / \ ' " ` ~ , ; : . < > )
 - Number of passwords: 32
+- `include-symbols` must be present in the password
